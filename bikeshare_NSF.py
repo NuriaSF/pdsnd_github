@@ -9,12 +9,19 @@ CITY_DATA = { 'chicago': 'chicago.csv',
               'new york city': 'new_york_city.csv',
               'washington': 'washington.csv' }
 
+
+
+############################################################################
+# GETTING AND PROCESSING THE DATA
+############################################################################
+
+
 def get_filters():
     """
-    Asks user to specify a city, month, and day to analyze.
+    Asks user to specify a city, month, and day to analyse.
 
     Returns:
-        (str) city - name of the city to analyze
+        (str) city - name of the city to analyse
         (str) month - name of the month to filter by, or "all" to apply no month filter
         (str) day - name of the day of week to filter by, or "all" to apply no day filter
     """
@@ -26,7 +33,7 @@ def get_filters():
     #Let us now check that it is actually a valid input. We give 3 chances before exiting the program
     i=0
     while (city != 'chicago') and (city != 'new york city') and (city != 'washington'):
-        city=input('That was not valid. Please, introduce a valid city [chicago/new york city/washington]: ')
+        city=input('Please, introduce a valid city [chicago/new york city/washington]: ')
         i += 1
         if i==3:
             sys.exit()
@@ -42,7 +49,7 @@ def get_filters():
         i=0
         set_months=['january','february','march','april','may','june']
         while month not in set_months:
-            month=input('That was not valid. Please, introduce a valid month [january/february/.../june]: ')
+            month=input('Please, introduce a valid month [january/february/.../june]: ')
             i += 1
             if i==3:
                 sys.exit()
@@ -58,7 +65,7 @@ def get_filters():
         i=0
         set_days=['monday','tuesday','wednesday','thursday','friday','saturday','sunday']
         while day not in set_days:
-            day=input('That was not valid. Please, introduce a valid day [monday/tuesday/.../sunday]: ')
+            day=input('Please, introduce a valid day [monday/tuesday/.../sunday]: ')
             i += 1
             if i==3:
                 sys.exit()
@@ -106,6 +113,13 @@ def load_data(city, month, day):
         df = df[(df['day_of_week']) == day.title()]
 
     return df
+
+
+
+############################################################################
+# COMPUTATION OF THE DIFFERENT STATISTICS
+############################################################################
+
 
 
 def time_stats(df,month,day):
@@ -238,6 +252,11 @@ def user_stats(df,city):
         print('-'*40)
 
 
+############################################################################
+# MAIN FUNCTION: Takes and processes the data and compute the statistics
+############################################################################
+
+
 def main():
     '''
     This function asks the user to introduce the city, month and day of week about which they want some information.
@@ -256,7 +275,7 @@ def main():
         #we check that it is actually a valid input. We give 3 chances before exiting the program:
         count_wish_vis=0
         while wish_vis not in ['data','statistics']:
-            wish_vis=input('That was not valid. Please, introduce a valid input [data/statistics]: ')
+            wish_vis=input('Please, introduce a valid input [data/statistics]: ')
             count_wish_vis += 1
             if count_wish_vis==3:
                 sys.exit()
@@ -268,7 +287,7 @@ def main():
             #we check that it is actually a valid input. We give 3 chances before exiting the program:
             count_keep_showing=0
             while keep_showing not in ['y','n']:
-                keep_showing=input('That was not valid. Please, introduce a valid input [y/n]: ')
+                keep_showing=input('Please, introduce a valid input [y/n]: ')
                 count_keep_showing += 1
                 if count_keep_showing == 3:
                     sys.exit()
