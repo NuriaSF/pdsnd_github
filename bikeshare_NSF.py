@@ -12,6 +12,13 @@ CITY_DATA = { 'chicago': 'chicago.csv',
               'new york city': 'new_york_city.csv',
               'washington': 'washington.csv' }
 
+
+
+############################################################################
+# GETTING AND PROCESSING THE DATA
+############################################################################
+
+
 def get_filters():
     """
     Asks user to specify a city, month, and day to analyse.
@@ -109,6 +116,13 @@ def load_data(city, month, day):
         df = df[(df['day_of_week']) == day.title()]
 
     return df
+
+
+
+############################################################################
+# COMPUTATION OF THE DIFFERENT STATISTICS
+############################################################################
+
 
 
 def time_stats(df,month,day):
@@ -239,6 +253,11 @@ def user_stats(df,city):
 
         print("\nThis took %s seconds." % (time.time() - start_time))
         print('-'*40)
+
+
+############################################################################
+# MAIN FUNCTION: Takes and processes the data and compute the statistics
+############################################################################
 
 
 def main():
