@@ -6,7 +6,7 @@ This python project was created the 2nd of March 2019 whereas the README file wa
 #### Description
 bikeshare_NSF is a python program that explores data related to bike share systems for three major cities in the United States—Chicago, New York City, and Washington. It allows to filter the data by month and day of week providing descriptive statistics about it. Such statistics are:
 
- 1. Popular times of travel
+ * Popular times of travel
     * most common month
     * most common day of week
     * most common hour of day
@@ -29,4 +29,4 @@ bikeshare_NSF is a python program that explores data related to bike share syste
 In order to be able to execute this program, the following packages are required: *time*, *statistics*, *sys*, *pandas* and *numpy*.
 
 ### About this repository
-This python program was part of the final project for the **Udacity** Nanodegree Program "Programming for Data Science".
+This python program was part of the final project for the *Udacity* Nanodegree Program "Programming for Data Science".
