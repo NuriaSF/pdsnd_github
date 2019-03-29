@@ -1,7 +1,4 @@
-'''
-Author: Nuria Sanchez Font
-Project: Explore US BikeShare Data
-'''
+
 import time
 import statistics as stat
 import sys
